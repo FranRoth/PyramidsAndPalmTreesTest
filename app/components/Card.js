@@ -1,21 +1,13 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 
-import Text from "./Text";
 import colors from "../config/colors";
 
-function Card({ title, subTitle, image }) {
+function Card({ image, isMain }) {
   return (
-    <View style={styles.card}>
+    <View style={isMain? styles.cardMain: styles.card}>
       <Image style={styles.image} source={image} />
-      <View style={styles.detailsContainer}>
-        <Text style={styles.title} numberOfLines={1}>
-          {title}
-        </Text>
-        <Text style={styles.subTitle} numberOfLines={2}>
-          {subTitle}
-        </Text>
-      </View>
+      <View style={styles.detailsContainer}/>
     </View>
   );
 }
@@ -23,6 +15,12 @@ function Card({ title, subTitle, image }) {
 const styles = StyleSheet.create({
   card: {
     borderRadius: 15,
+    backgroundColor: colors.white,
+    marginBottom: 20,
+    overflow: "hidden",
+  },
+  mainCard: {
+    borderRadius: 20,
     backgroundColor: colors.white,
     marginBottom: 20,
     overflow: "hidden",
