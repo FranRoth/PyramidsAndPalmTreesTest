@@ -4,10 +4,10 @@ import { View, StyleSheet, Image } from "react-native";
 import colors from "../config/colors";
 
 function Card({ image, isMain }) {
+  console.log("IS MAIN CARD: ", isMain)
   return (
-    <View style={isMain? styles.cardMain: styles.card}>
+    <View style={isMain? styles.mainCard: styles.card}>
       <Image style={styles.image} source={image} />
-      <View style={styles.detailsContainer}/>
     </View>
   );
 }
@@ -18,24 +18,31 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginBottom: 20,
     overflow: "hidden",
+    backgroundColor: colors.white,
+    margin: 20,
+    flex: 1,
+    overflow: "hidden",
+    alignContent:'center',
+    justifyContent:'center',
+    position:'relative',
   },
   mainCard: {
-    borderRadius: 20,
+    borderRadius: 15,
     backgroundColor: colors.white,
     marginBottom: 20,
+    margin: 20,
+    flex: 1,
     overflow: "hidden",
-  },
-  detailsContainer: {
-    padding: 20,
+    alignContent:'center',
+    justifyContent:'center',
   },
   image: {
-    width: '50%',
+    width: 150,
     height: '100%',
-    overflow: 'hidden',
-    alignItems: 'center',
-    backgroundColor: 'orange',
-    position: 'relative',
+    overflow: 'visible',
     margin: 10,
+    backgroundColor: '000',
+    position: 'relative',
   },
   subTitle: {
     color: colors.secondary,

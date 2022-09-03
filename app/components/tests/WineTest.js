@@ -1,5 +1,6 @@
 
 import React from "react";
+import { StyleSheet } from "react-native";
 
 import CardSetTest from "../CardsSetTest";
 import wineImage from "../../assets/set1_wine/test_1_main.PNG"
@@ -7,6 +8,7 @@ import option1 from "../../assets/set1_wine/test_1_option_1.PNG"
 import option2 from "../../assets/set1_wine/test_1_option_2.PNG"
 import option3 from "../../assets/set1_wine/test_1_option_3.PNG"
 import option4 from "../../assets/set1_wine/test_1_option_4.PNG"
+import Screen from "../../components/Screen";
 
 
 export default function WineTest(){
@@ -17,11 +19,19 @@ export default function WineTest(){
     const wrongCard3 = option4
 
     return (
-        <CardSetTest
-            mainCard={mainCard}
-            correctCard
-            wrongCards={[wrongCard1, wrongCard2, wrongCard3]}
-            isAnimated={false}
-        />
+        <Screen style={styles.container}>
+            <CardSetTest
+                mainCard={mainCard}
+                correctCard={correctCard}
+                wrongCards={[wrongCard1, wrongCard2, wrongCard3]}
+                isAnimated={false}
+            />
+        </Screen>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+      padding: 10,
+    },
+});
