@@ -17,14 +17,42 @@ export default function WineTest(){
     const wrongCard1 = option2
     const wrongCard2 = option3
     const wrongCard3 = option4
+    const cardsOptions = [
+        {
+            image: option1,
+            isCorrect: true,
+            isMain: false,
+            key: 1,
+        },
+        {
+            image: option2,
+            isCorrect: false,
+            isMain: false,
+            key: 2,
+        },
+        {
+            image: option3,
+            isCorrect: false,
+            isMain: false,
+            key: 3,
+        },
+        {
+            image: option4,
+            isCorrect: false,
+            isMain: false,
+            key: 4,
+        },
+    ]
 
     return (
         <Screen style={styles.container}>
             <CardSetTest
                 mainCard={mainCard}
+                cardsOptions={cardsOptions}
                 correctCard={correctCard}
                 wrongCards={[wrongCard1, wrongCard2, wrongCard3]}
                 isAnimated={false}
+                numberOfColumns={2}
             />
         </Screen>
     )

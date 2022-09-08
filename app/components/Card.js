@@ -4,7 +4,6 @@ import { View, StyleSheet, Image } from "react-native";
 import colors from "../config/colors";
 
 function Card({ image, isMain }) {
-  console.log("IS MAIN CARD: ", isMain)
   return (
     <View style={isMain? styles.mainCard: styles.card}>
       <Image style={styles.image} source={image} />
@@ -21,6 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     margin: 20,
     flex: 1,
+    flexDirection: "row",
     overflow: "hidden",
     alignContent:'center',
     justifyContent:'center',
