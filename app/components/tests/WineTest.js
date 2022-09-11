@@ -12,11 +12,16 @@ import Screen from "../../components/Screen";
 
 
 export default function WineTest(){
-    const mainCard = wineImage
     const correctCard = option1
     const wrongCard1 = option2
     const wrongCard2 = option3
     const wrongCard3 = option4
+    
+    const mainCard = {
+        image: wineImage,
+        isMain: true,
+        key: 0
+    }
     const cardsOptions = [
         {
             image: option1,

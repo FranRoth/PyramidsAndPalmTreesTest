@@ -35,7 +35,7 @@ export default function CardsSetTest ({mainCard, correctCard, wrongCards, cardsO
   return (
     <View style={styles.cardSetContainer}>
       <View style={styles.mainCardContainer}>
-        <Card image={mainCard} isMain={false}/>
+        <Card image={mainCard.image} isMain={mainCard.isMain}/>
       </View>
       <View style={styles.optionCardsContainer}>
         {showOptionCards()}

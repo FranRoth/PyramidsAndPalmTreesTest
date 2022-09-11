@@ -1,20 +1,27 @@
-import React from "react";
-import { View, StyleSheet, Image } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import colors from "../config/colors";
 
-function Card({ image, isMain }) {
+function Card({ image, isMain, onPress }) {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
-    <View style={isMain? styles.mainCard: styles.card}>
-      <Image style={styles.image} source={image} />
+    <View style={isMain? styles.mainCard : styles.card}>
+      {isMain
+      ? <Image style={styles.image} source={image} />
+      : <TouchableOpacity onPress={onPress}>
+          <Image style={styles.image} source={image} />
+        </TouchableOpacity>
+    }
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
+    height: 150,
+    width: "200",
     borderRadius: 15,
-    backgroundColor: colors.white,
     marginBottom: 20,
     overflow: "hidden",
     backgroundColor: colors.white,
@@ -29,12 +36,12 @@ const styles = StyleSheet.create({
   mainCard: {
     borderRadius: 15,
     backgroundColor: colors.white,
-    marginBottom: 20,
     margin: 20,
     flex: 1,
+    flexDirection: "row", 
     overflow: "hidden",
-    alignContent:'center',
-    justifyContent:'center',
+    // alignContent:'center',
+    // justifyContent:'center',
   },
   image: {
     width: 150,
@@ -43,13 +50,6 @@ const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: '000',
     position: 'relative',
-  },
-  subTitle: {
-    color: colors.secondary,
-    fontWeight: "bold",
-  },
-  title: {
-    marginBottom: 7,
   },
 });
 
