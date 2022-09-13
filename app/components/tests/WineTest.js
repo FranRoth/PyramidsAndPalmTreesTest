@@ -50,16 +50,14 @@ export default function WineTest(){
     ]
 
     return (
-        <Screen style={styles.container}>
-            <CardSetTest
-                mainCard={mainCard}
-                cardsOptions={cardsOptions}
-                correctCard={correctCard}
-                wrongCards={[wrongCard1, wrongCard2, wrongCard3]}
-                isAnimated={false}
-                numberOfColumns={2}
-            />
-        </Screen>
+        <CardSetTest
+            mainCard={mainCard}
+            cardsOptions={cardsOptions}
+            correctCard={correctCard}
+            wrongCards={[wrongCard1, wrongCard2, wrongCard3]}
+            isAnimated={false}
+            numberOfColumns={2}
+        />
     )
 }
 

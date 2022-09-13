@@ -47,26 +47,19 @@ export default function CardsSetTest ({mainCard, correctCard, wrongCards, cardsO
 const styles = StyleSheet.create({
     cardSetContainer: {
       flex: 1,
-      padding: 20,
     },
     mainCardContainer: {
       flex: 1,
       backgroundColor:"lightblue",
-      alignContent:'center',
       alignItems:'center',
     },
     optionCardsContainer: {
       flex: 2,
-      // justifyContent:'center',
       alignItems:'center',
       backgroundColor:"lightgreen",
-      position:'relative',
     },
     optionCards: {
-      flexDirection:'row',
-      // justifyContent:'center',
       backgroundColor:"lightgreen",
-      height:200, //TODO: Set to a responsive card height resoluction.
     },
     subTitle: {
       color: colors.secondary,
