@@ -6,9 +6,7 @@ import Card from "./Card";
 import colors from "../config/colors";
 import { shuffle } from "./../Helper";
 
-export default function CardsSetTest ({mainCard, correctCard, wrongCards, cardsOptions, numberOfColumns, isAnimated}) {
-  let cardSet = [correctCard, ...wrongCards]
-  // const [cards, setCards] = useState({cardSet: cardSet});
+export default function CardsSetTest ({mainCard, cardsOptions, numberOfColumns, isAnimated}) {
 
   const showOptionCards = () => {
 

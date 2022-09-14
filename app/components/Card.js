@@ -20,7 +20,7 @@ function Card({ image, isMain, onPress }) {
 const styles = StyleSheet.create({
   card: {
     height: 155,
-    width: 200,
+    // width: 200,
     borderRadius: 15,
     marginBottom: 20,
     overflow: "hidden",
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     position:'relative',
   },
   mainCard: {
-    width: 200,
+    // width: 200,
     borderRadius: 15,
     backgroundColor: colors.white,
     margin: 20,

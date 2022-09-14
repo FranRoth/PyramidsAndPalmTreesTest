@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 
 import CardSetTest from "../CardsSetTest";
@@ -13,50 +13,57 @@ import Screen from "../../components/Screen";
 
 export default function WineTest(){
     const correctCard = option1
-    const wrongCard1 = option2
-    const wrongCard2 = option3
-    const wrongCard3 = option4
     
     const mainCard = {
         image: wineImage,
         isMain: true,
         key: 0
     }
-    const cardsOptions = [
+    const testOptions = [
         {
             image: option1,
             isCorrect: true,
             isMain: false,
+            selected: false,
             key: 1,
         },
         {
             image: option2,
             isCorrect: false,
             isMain: false,
+            selected: false,
             key: 2,
         },
         {
             image: option3,
             isCorrect: false,
             isMain: false,
+            selected: false,
             key: 3,
         },
         {
             image: option4,
             isCorrect: false,
             isMain: false,
+            selected: false,
             key: 4,
         },
     ]
+
+    const [cardsOptions, setCardsOptions] = useState(testOptions)
+
+    const hanldeSelect = (selectedCard)=> {
+        cardsOptions.map
+    }
 
     return (
         <CardSetTest
             mainCard={mainCard}
             cardsOptions={cardsOptions}
             correctCard={correctCard}
-            wrongCards={[wrongCard1, wrongCard2, wrongCard3]}
             isAnimated={false}
             numberOfColumns={2}
+            hanldeSelect={hanldeSelect}
         />
     )
 }
