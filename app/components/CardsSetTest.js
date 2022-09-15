@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { FlatList } from "react-native-web";
 
@@ -8,26 +8,38 @@ import { shuffle } from "./../Helper";
 
 export default function CardsSetTest ({mainCard, cardsOptions, numberOfColumns, isAnimated}) {
 
-  const showOptionCards = () => {
+  const [options, setOptions] = useState(cardsOptions);
 
+  const showOptionCards = () => {
     return (
       <FlatList style={styles.optionCards}
-        data={cardsOptions}
-        keyExtractor={(item) => item.key}
+        data={options}
+        keyExtractor={(item) => item.id}
         numColumns={numberOfColumns}
         renderItem={({ item }) => {
-          console.log(item)
           return <Card
             image={item.image}
             isMain={item.isMain}
-            onPress={() => {
-              console.log("**do the magic**");
-            }}
+            selected={item.selected}
+            onPress={()=> onSelect(item)}
           />
         }
         }
       />
     );
+  }
+
+  const onSelect = (selectedCard) =>{
+    const cardsOptionsWithSelectedCard = cardsOptions.map( (card)=> {
+      card.id === selectedCard.id
+        ? card.selected = true
+        : card.selected = false
+      return card;
+    })
+    console.log('OPTIONS LIST BEFORE: ', options)
+    setOptions(cardsOptionsWithSelectedCard);
+    console.log('OPTIONS LIST AFTER: ', options)
+    
   }
 
   return (

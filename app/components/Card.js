@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import colors from "../config/colors";
 
-function Card({ image, isMain, onPress }) {
-  const [modalVisible, setModalVisible] = useState(false);
+function Card({ image, isMain, onPress, selected }) {
+  const [selectedStyle, setSelectedStyle] = useState({opacity: 1});
+  
+  useEffect( ()=> {
+    if(selected){
+      setSelectedStyle({opacity:0.5});
+    }
+  }, [selected])
+
   return (
     <View style={isMain? styles.mainCard : styles.card}>
       {isMain
       ? <Image style={styles.image} source={image} />
-      : <TouchableOpacity onPress={onPress}>
+      : <TouchableOpacity style={selectedStyle} onPress={onPress} activeOpacity={0.5}>
           <Image style={styles.image} source={image} />
         </TouchableOpacity>
     }
@@ -24,7 +31,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginBottom: 20,
     overflow: "hidden",
-    backgroundColor: colors.white,
+    backgroundColor: colors.black,
     margin: 45,
     flex: 1,
     flexDirection: "row",

@@ -25,28 +25,28 @@ export default function WineTest(){
             isCorrect: true,
             isMain: false,
             selected: false,
-            key: 1,
+            id: 1,
         },
         {
             image: option2,
             isCorrect: false,
             isMain: false,
             selected: false,
-            key: 2,
+            id: 2,
         },
         {
             image: option3,
             isCorrect: false,
             isMain: false,
             selected: false,
-            key: 3,
+            id: 3,
         },
         {
             image: option4,
             isCorrect: false,
             isMain: false,
             selected: false,
-            key: 4,
+            id: 4,
         },
     ]
 
