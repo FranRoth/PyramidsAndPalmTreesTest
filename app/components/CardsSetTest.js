@@ -7,13 +7,28 @@ import colors from "../config/colors";
 import { shuffle } from "./../Helper";
 
 export default function CardsSetTest ({mainCard, cardsOptions, numberOfColumns, isAnimated}) {
-
+  const [shuffleCards, setShuffleCards] = useState(true);
   const [options, setOptions] = useState(cardsOptions);
+
+  // useEffect( ()=> {
+  //   if(shuffleCards){
+  //     setShuffleCards(false)
+  //     setOptions(shuffle(options))
+  //   }
+  // }, [])
+
+  const getCardsOptions = ()=>{
+    if(shuffleCards){
+      setShuffleCards(false)
+      setOptions(shuffle(options))
+    }
+    return options
+  }
 
   const showOptionCards = () => {
     return (
       <FlatList style={styles.optionCards}
-        data={options}
+        data={getCardsOptions()}
         keyExtractor={(item) => item.id}
         numColumns={numberOfColumns}
         renderItem={({ item }) => {
