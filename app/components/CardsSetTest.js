@@ -36,9 +36,7 @@ export default function CardsSetTest ({mainCard, cardsOptions, numberOfColumns, 
         : card.selected = false
       return card;
     })
-    console.log('OPTIONS LIST BEFORE: ', options)
     setOptions(cardsOptionsWithSelectedCard);
-    console.log('OPTIONS LIST AFTER: ', options)
     
   }
 

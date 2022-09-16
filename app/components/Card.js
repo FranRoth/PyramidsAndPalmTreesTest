@@ -10,6 +10,9 @@ function Card({ image, isMain, onPress, selected }) {
     if(selected){
       setSelectedStyle({opacity:0.5});
     }
+    else {
+      setSelectedStyle({opacity:1});
+    }
   }, [selected])
 
   return (
