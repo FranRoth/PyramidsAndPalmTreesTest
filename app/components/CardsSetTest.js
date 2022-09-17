@@ -9,14 +9,7 @@ import { shuffle } from "./../Helper";
 export default function CardsSetTest ({mainCard, cardsOptions, numberOfColumns, isAnimated}) {
   const [shuffleCards, setShuffleCards] = useState(true);
   const [options, setOptions] = useState(cardsOptions);
-
-  // useEffect( ()=> {
-  //   if(shuffleCards){
-  //     setShuffleCards(false)
-  //     setOptions(shuffle(options))
-  //   }
-  // }, [])
-
+  
   const getCardsOptions = ()=>{
     if(shuffleCards){
       setShuffleCards(false)
