@@ -58,6 +58,7 @@ export default function WineTest(){
 
     return (
         <CardSetTest
+            style={styles.container}
             mainCard={mainCard}
             cardsOptions={cardsOptions}
             correctCard={correctCard}
@@ -70,6 +71,7 @@ export default function WineTest(){
 
 const styles = StyleSheet.create({
     container: {
-      padding: 10,
+    //   padding: 10,
+    orientation: 'portrait'
     },
 });
