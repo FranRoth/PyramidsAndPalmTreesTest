@@ -1,4 +1,4 @@
-import wineTest from "./WineTestCards"
+import wineTest from "./WineTest"
 
 const tests = [
     wineTest,
