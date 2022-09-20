@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 
 import Text from "./Text";
 import colors from "../config/colors";
-import CardsSetTest from "./CardsSetTest";
-import { Button, TouchableOpacity } from "react-native-web";
+import CardSetTest from "./CardsSetTest";
+import { TouchableOpacity } from "react-native-web";
+import tests from "./tests/Tests";
 
 function PyramidAndPalmTreesTest(props) {
+  const [testNumber, setTestNumber] = useState(0)
 
   const showTest = ()=> {
-
+    const currentTest = tests[testNumber]
+    return(
+      <CardSetTest
+        cards={currentTest.cards}
+        numberOfColumns={2}
+        // hanldeSelect={hanldeSelect}
+      />
+    )
   }
-  
+
   return (
     <View style={styles.detailsContainer}>
       {showTest()}
@@ -47,7 +56,7 @@ const styles = StyleSheet.create({
     alignItems:"flex-end",
   },
   button: {
-    backgroundColor:'tomato',
+    backgroundColor: colors.primary,
     height: 50,
     width: 200,
     borderRadius: 15,
@@ -56,6 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: "center",
     margin:15,
+    fontWeight:"bold",
   },
   subTitle: {
     color: colors.secondary,
