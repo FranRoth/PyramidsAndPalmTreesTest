@@ -7,9 +7,14 @@ import CardsSetTest from "./CardsSetTest";
 import { Button, TouchableOpacity } from "react-native-web";
 
 function PyramidAndPalmTreesTest(props) {
+
+  const showTest = ()=> {
+
+  }
+  
   return (
     <View style={styles.detailsContainer}>
-      {/* <CardsSetTest></CardsSetTest> */}
+      {showTest()}
       <View style={styles.navigation}>
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={styles.button} Text={"BACK"} disable={true}>

@@ -21,6 +21,11 @@ export default function WineTest(){
     }
     const testOptions = [
         {
+            image: wineImage,
+            isMain: true,
+            id: 0
+        },
+        {
             image: option1,
             isCorrect: true,
             isMain: false,
@@ -60,7 +65,7 @@ export default function WineTest(){
         <CardSetTest
             style={styles.container}
             mainCard={mainCard}
-            cardsOptions={cardsOptions}
+            cards={cardsOptions}
             correctCard={correctCard}
             isAnimated={false}
             numberOfColumns={2}

@@ -4,6 +4,6 @@ import WineTest from "./app/components/tests/WineTest";
 import PyramidAndPalmTreesTest from "./app/components/PyramidsAndPalmTreesTest";
 
 export default function App() {
-  // return <WineTest/>;
+  return <WineTest/>;
   return <PyramidAndPalmTreesTest/>
 }
