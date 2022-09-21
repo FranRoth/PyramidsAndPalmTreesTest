@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
     position:'relative',
   },
   mainCard: {
-    height: 220,
-    width: 220,
+    height: 250,
+    width: 250,
     borderRadius: 15,
     backgroundColor: colors.white,
     margin: 20,
