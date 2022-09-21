@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 
 import Text from "./Text";
@@ -8,29 +8,53 @@ import { TouchableOpacity } from "react-native-web";
 import tests from "./tests/Tests";
 
 function PyramidAndPalmTreesTest(props) {
-  const [testNumber, setTestNumber] = useState(0)
+  const [testId, setTestId] = useState(0);
+  const [backButtonDisable, setbackButtonDisable] = useState(false);
+  const [nextButtonDisable, setnextButtonDisable] = useState(false);
+  //TODO: disable back button
+
+  useEffect( ()=>{
+  },[])
 
   const showTest = ()=> {
-    const currentTest = tests[testNumber]
     return(
       <CardSetTest
-        cards={currentTest.cards}
-        numberOfColumns={2}
+        cards={tests[testId].cards}
+        numberOfColumns={tests[testId].columns}
         // hanldeSelect={hanldeSelect}
       />
     )
   }
 
+  const hadleNextButton = () =>{
+    if( tests.length === (testId + 1) ){ //check if you are in the last test
+      //TODO: END TEST.
+    } else {
+      setTestId(testId+1)
+    }
+  }
+
+  const hadleBackButton = () =>{
+    if( testId > 0){
+      setTestId(testId-1)
+    } else {
+      //TODO: disable back button
+    }
+  }
+
+  const isTheLastTest = ()=> (tests.length === testId + 1)
+  
   return (
     <View style={styles.detailsContainer}>
       {showTest()}
       <View style={styles.navigation}>
         <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.button} Text={"BACK"} disable={true}>
-            <Text style={styles.buttonText}>BACK</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} Text={"NEXT"}>
-            <Text style={styles.buttonText}>NEXT</Text>
+          {(testId > 0) && <TouchableOpacity style={styles.button} Text={"BACK"} onPress={hadleBackButton} disabled={backButtonDisable}>
+                <Text style={styles.buttonText}>BACK</Text>
+              </TouchableOpacity>
+          }
+          <TouchableOpacity style={styles.button} Text={"NEXT"} onPress={hadleNextButton} disabled={nextButtonDisable}>
+            <Text style={styles.buttonText}>{isTheLastTest()? 'FINISH':'NEXT'}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -52,11 +76,11 @@ const styles = StyleSheet.create({
   buttonsContainer:{
     flex: 1,
     flexDirection: 'row',
-    justifyContent:"space-between",
+    justifyContent:"space-evenly",
     alignItems:"flex-end",
   },
   button: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.button,
     height: 50,
     width: 200,
     borderRadius: 15,

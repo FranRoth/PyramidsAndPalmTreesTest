@@ -18,7 +18,7 @@ function Card({ image, isMain, onPress, selected }) {
   return (
     <View style={isMain? styles.mainCard : styles.card}>
       {isMain
-      ? <Image style={styles.image} source={image} />
+      ? <Image style={styles.mainImage} source={image} />
       : <TouchableOpacity style={selectedStyle} onPress={onPress} activeOpacity={0.5}>
           <Image style={styles.image} source={image} />
         </TouchableOpacity>
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     position:'relative',
   },
   mainCard: {
-    // width: 200,
+    height: 220,
+    width: 220,
     borderRadius: 15,
     backgroundColor: colors.white,
     margin: 20,
@@ -54,6 +55,13 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 155,
+    flex: 1,
+    overflow: 'hidden',
+    backgroundColor: '000',
+    alignItems:'center',
+    alignContent: 'center',
+  },
+  mainImage: {
     flex: 1,
     overflow: 'hidden',
     backgroundColor: '000',

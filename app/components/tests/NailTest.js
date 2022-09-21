@@ -1,11 +1,11 @@
-import mainImage from "../../assets/set1_wine/test_1_main.PNG"
-import option1 from "../../assets/set1_wine/test_1_option_1.PNG"
-import option2 from "../../assets/set1_wine/test_1_option_2.PNG"
-import option3 from "../../assets/set1_wine/test_1_option_3.PNG"
-import option4 from "../../assets/set1_wine/test_1_option_4.PNG"
+import mainImage from "../../assets/set2_nail/test_2_main.PNG"
+import option1 from "../../assets/set2_nail/test_2_option_1.PNG"
+import option2 from "../../assets/set2_nail/test_2_option_2.PNG"
+import option3 from "../../assets/set2_nail/test_2_option_3.PNG"
+import option4 from "../../assets/set2_nail/test_2_option_4.PNG"
 
-const wineTest = {
-    name: "Wine Test",
+const nailTest = {
+    name: "Nail Test",
     isAnimated: "false",
     cards: [
         {
@@ -46,4 +46,4 @@ const wineTest = {
     testsResults: {}
 }
 
-export default wineTest;
+export default nailTest;

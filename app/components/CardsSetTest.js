@@ -6,9 +6,14 @@ import Card from "./Card";
 import colors from "../config/colors";
 import { shuffle } from "./../Helper";
 
-export default function CardsSetTest ({cards, numberOfColumns, isAnimated}) {
+export default function CardsSetTest ({cards, numberOfColumns}) {
   const [shuffleCards, setShuffleCards] = useState(true);
   const [options, setOptions] = useState(cards.filter((card)=> !card.isMain));
+
+  useEffect( ()=>{
+    setShuffleCards(true)
+    setOptions(cards.filter((card)=> !card.isMain))
+  },[cards])
 
   const getCardsOptions = ()=>{
     if(shuffleCards){
