@@ -6,7 +6,7 @@ import option4 from "../../assets/set1_wine/test_1_option_4.PNG"
 
 const wineTest = {
     name: "Wine Test",
-    isAnimated: "false",
+    isAnimated: false,
     cards: [
         {
             image: mainImage,
@@ -43,7 +43,7 @@ const wineTest = {
         },
     ],
     columns: 2,
-    testsResults: {}
+    results: {}
 }
 
 export default wineTest;

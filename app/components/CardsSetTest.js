@@ -6,7 +6,7 @@ import Card from "./Card";
 import colors from "../config/colors";
 import { shuffle } from "./../Helper";
 
-export default function CardsSetTest ({cards, numberOfColumns}) {
+export default function CardsSetTest ({cards, numberOfColumns, handleOnSelect}) {
   const [shuffleCards, setShuffleCards] = useState(true);
   const [options, setOptions] = useState(cards.filter((card)=> !card.isMain));
 
@@ -48,14 +48,19 @@ export default function CardsSetTest ({cards, numberOfColumns}) {
   }
 
   const onSelect = (selectedCard) =>{
+    if(selectedCard.selected){
+      return //if the card is already selected do nothing.
+    }
+
     const cardsOptionsWithSelectedCard = options.map( (card)=> {
       card.id === selectedCard.id
         ? card.selected = true
         : card.selected = false
       return card;
     })
+  
+    handleOnSelect(selectedCard);
     setOptions(cardsOptionsWithSelectedCard);
-    
   }
 
   return (

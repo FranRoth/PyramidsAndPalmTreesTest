@@ -6,7 +6,7 @@ import option4 from "../../assets/set4_plug/test_4_option_4.PNG"
 
 const plugTest = {
     name: "Plug Test",
-    isAnimated: "false",
+    isAnimated: false,
     cards: [
         {
             image: mainImage,
@@ -15,7 +15,7 @@ const plugTest = {
         },
         {
             image: option1,
-            isCorrect: true,
+            isCorrect: false,
             isMain: false,
             selected: false,
             id: 1,
@@ -36,14 +36,14 @@ const plugTest = {
         },
         {
             image: option4,
-            isCorrect: false,
+            isCorrect: true,
             isMain: false,
             selected: false,
             id: 4,
         },
     ],
     columns: 2,
-    testsResults: {}
+    results: {}
 }
 
 export default plugTest;

@@ -6,7 +6,7 @@ import option4 from "../../assets/set2_nail/test_2_option_4.PNG"
 
 const nailTest = {
     name: "Nail Test",
-    isAnimated: "false",
+    isAnimated: false,
     cards: [
         {
             image: mainImage,
@@ -43,7 +43,7 @@ const nailTest = {
         },
     ],
     columns: 2,
-    testsResults: {}
+    results: {}
 }
 
 export default nailTest;

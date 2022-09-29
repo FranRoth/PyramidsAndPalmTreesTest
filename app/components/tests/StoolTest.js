@@ -6,7 +6,7 @@ import option4 from "../../assets/set3_stool/test_3_option_4.PNG"
 
 const stoolTest = {
     name: "Stool Test",
-    isAnimated: "false",
+    isAnimated: true,
     cards: [
         {
             image: mainImage,
@@ -43,7 +43,7 @@ const stoolTest = {
         },
     ],
     columns: 2,
-    testsResults: {}
+    results: {}
 }
 
 export default stoolTest;

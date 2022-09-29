@@ -11,17 +11,15 @@ function PyramidAndPalmTreesTest(props) {
   const [testId, setTestId] = useState(0);
   const [backButtonDisable, setbackButtonDisable] = useState(false);
   const [nextButtonDisable, setnextButtonDisable] = useState(false);
-  //TODO: disable back button
-
-  useEffect( ()=>{
-  },[])
+  const [start, setStart] = useState(Date.now());
+  //TODO: enable and disable back and next buttons
 
   const showTest = ()=> {
     return(
       <CardSetTest
         cards={tests[testId].cards}
         numberOfColumns={tests[testId].columns}
-        // hanldeSelect={hanldeSelect}
+        handleOnSelect={handleOnSelect}
       />
     )
   }
@@ -31,6 +29,7 @@ function PyramidAndPalmTreesTest(props) {
       //TODO: END TEST.
     } else {
       setTestId(testId+1)
+      setStart(Date.now())
     }
   }
 
@@ -40,6 +39,15 @@ function PyramidAndPalmTreesTest(props) {
     } else {
       //TODO: disable back button
     }
+  }
+
+  const handleOnSelect = (card) =>{
+    const now = Date.now()
+    const timeSpend = tests[testId]?.results?.timeSpend
+    const totalTimeSpend = now - start +  (timeSpend? timeSpend : 0)
+
+    tests[testId].results = {timeSpend: totalTimeSpend, isCorrect: card.isCorrect, isAnimated: tests[testId].isAnimated}
+    console.log("TEST NUM "+ testId + ": ", tests[testId].results)
   }
 
   const isTheLastTest = ()=> (tests.length === testId + 1)
