@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 
-import Text from "./Text";
+import Text from "../components/Text";
 import colors from "../config/colors";
-import CardSetTest from "./CardsSetTest";
+import CardSetTest from "../components/CardsSetTest";
 import { TouchableOpacity } from "react-native-web";
-import tests from "./tests/Tests";
+import tests from "../components/tests/Tests";
 
 function PyramidAndPalmTreesTest(props) {
   const [testId, setTestId] = useState(0);
@@ -44,7 +44,7 @@ function PyramidAndPalmTreesTest(props) {
   const handleOnSelect = (card) =>{
     const now = Date.now()
     const timeSpend = tests[testId]?.results?.timeSpend
-    const totalTimeSpend = now - start +  (timeSpend? timeSpend : 0)
+    const totalTimeSpend = (now - start) + (timeSpend? timeSpend : 0)
 
     tests[testId].results = {timeSpend: totalTimeSpend, isCorrect: card.isCorrect, isAnimated: tests[testId].isAnimated}
     console.log("TEST NUM "+ testId + ": ", tests[testId].results)

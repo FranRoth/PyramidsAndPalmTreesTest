@@ -1,5 +1,5 @@
 import React from "react";
-import PyramidAndPalmTreesTest from "./app/components/PyramidsAndPalmTreesTest";
+import PyramidAndPalmTreesTest from "./app/screens/PyramidsAndPalmTreesTest";
 
 export default function App() {
   return <PyramidAndPalmTreesTest/>
