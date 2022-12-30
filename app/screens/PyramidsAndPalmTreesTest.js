@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 
-import Text from "./Text";
+import Text from "../components/Text";
 import colors from "../config/colors";
-import CardSetTest from "./CardsSetTest";
+import CardSetTest from "../components/CardsSetTest";
 import { TouchableOpacity } from "react-native-web";
-import tests from "./tests/Tests";
+import tests from "../components/evaluation_tests/Tests";
 
 function PyramidAndPalmTreesTest(props) {
   const [testId, setTestId] = useState(0);
