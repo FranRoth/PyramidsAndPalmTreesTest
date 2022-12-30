@@ -44,7 +44,6 @@ function PyramidAndPalmTreesTest(props) {
   const handleOnSelect = (card) =>{
     const now = Date.now()
     const timeSpend = tests[testId]?.results?.timeSpend
-    const totalTimeSpend = now - start +  (timeSpend? timeSpend : 0)
     const totalTimeSpend = (now - start) + (timeSpend? timeSpend : 0)
 
     tests[testId].results = {timeSpend: totalTimeSpend, isCorrect: card.isCorrect, isAnimated: tests[testId].isAnimated}
